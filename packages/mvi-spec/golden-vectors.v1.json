@@ -1,0 +1,472 @@
+[
+  {
+    "id": "VEC-01-LOW-VULNERABILITY",
+    "description": "Healthy young primigravida, normal vitals, all-weather road, near facility, full data",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 110,
+        "diastolic": 70
+      },
+      "bp_trend": "stable_normal",
+      "anaemia": {
+        "hb": 12.2,
+        "pallor": "no"
+      },
+      "prior_c_section": false,
+      "gestational_age_anc1": 10,
+      "maternal_age": 24,
+      "birth_order_parity": 0,
+      "education_level": "higher_secondary_plus",
+      "household_autonomy": "independent",
+      "distance_to_cemoc": 15,
+      "transport_availability": "always_available",
+      "past_referral_history": "no_prior_referral",
+      "road_disruption_risk": "all_weather_road",
+      "migration_status": "settled_resident"
+    },
+    "danger_signs": [],
+    "expected": {
+      "overall_score": 1.62,
+      "completeness": 1.0,
+      "lower_bound": 1.62,
+      "upper_bound": 1.62,
+      "band": "lower",
+      "domain_scores": {
+        "clinical": 0.0,
+        "social": 6.48,
+        "accessibility": 0.0,
+        "environmental": 0.0
+      },
+      "missing_factors": [],
+      "top_contributing_factors": [
+        {
+          "factor": "birth_order_parity",
+          "domain": "social",
+          "score": 25,
+          "weight": 0.7,
+          "weighted_points": 1.62,
+          "bin": "primigravida"
+        },
+        {
+          "factor": "blood_pressure",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 1.0,
+          "weighted_points": 0.0,
+          "bin": "normal"
+        },
+        {
+          "factor": "bp_trend",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 0.6,
+          "weighted_points": 0.0,
+          "bin": "stable_normal"
+        },
+        {
+          "factor": "anaemia",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 0.9,
+          "weighted_points": 0.0,
+          "bin": "no_anaemia"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": false,
+        "triggers_fired": [],
+        "priority": "Routine"
+      }
+    }
+  },
+  {
+    "id": "VEC-02-MODERATE-VULNERABILITY",
+    "description": "Adolescent mother, mild anaemia, second trimester booking, 45 min to CEmOC",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 118,
+        "diastolic": 76
+      },
+      "bp_trend": "stable_normal",
+      "anaemia": {
+        "hb": 10.4,
+        "pallor": "mild"
+      },
+      "prior_c_section": false,
+      "gestational_age_anc1": 18,
+      "maternal_age": 17,
+      "birth_order_parity": 0,
+      "education_level": "secondary",
+      "household_autonomy": "shared_decision",
+      "distance_to_cemoc": 45,
+      "transport_availability": "delayed_on_call",
+      "past_referral_history": "no_prior_referral",
+      "road_disruption_risk": "seasonal_flood_risk",
+      "migration_status": "settled_resident"
+    },
+    "danger_signs": [],
+    "expected": {
+      "overall_score": 29.91,
+      "completeness": 1.0,
+      "lower_bound": 29.9,
+      "upper_bound": 29.9,
+      "band": "lower",
+      "domain_scores": {
+        "clinical": 14.61,
+        "social": 44.26,
+        "accessibility": 28.4,
+        "environmental": 32.35
+      },
+      "missing_factors": [],
+      "top_contributing_factors": [
+        {
+          "factor": "maternal_age",
+          "domain": "social",
+          "score": 90,
+          "weight": 0.8,
+          "weighted_points": 6.67,
+          "bin": "age_adolescent"
+        },
+        {
+          "factor": "road_disruption_risk",
+          "domain": "environmental",
+          "score": 55,
+          "weight": 1.0,
+          "weighted_points": 8.09,
+          "bin": "seasonal_flood_risk"
+        },
+        {
+          "factor": "transport_availability",
+          "domain": "accessibility",
+          "score": 45,
+          "weight": 0.8,
+          "weighted_points": 3.6,
+          "bin": "delayed_on_call"
+        },
+        {
+          "factor": "gestational_age_anc1",
+          "domain": "clinical",
+          "score": 40,
+          "weight": 0.6,
+          "weighted_points": 1.58,
+          "bin": "second_trimester"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": false,
+        "triggers_fired": [],
+        "priority": "Routine"
+      }
+    }
+  },
+  {
+    "id": "VEC-03-ELEVATED-VULNERABILITY",
+    "description": "Elevated BP, prior C-section, grand multipara, low education, distance 75 min",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 142,
+        "diastolic": 92
+      },
+      "bp_trend": "rising_trend",
+      "anaemia": {
+        "hb": 9.2,
+        "pallor": "moderate"
+      },
+      "prior_c_section": true,
+      "gestational_age_anc1": 24,
+      "maternal_age": 36,
+      "birth_order_parity": 3,
+      "education_level": "no_formal_education",
+      "household_autonomy": "limited_autonomy",
+      "distance_to_cemoc": 75,
+      "transport_availability": "delayed_on_call",
+      "past_referral_history": "past_non_completion",
+      "road_disruption_risk": "seasonal_flood_risk",
+      "migration_status": "seasonal_migrant"
+    },
+    "danger_signs": [],
+    "expected": {
+      "overall_score": 65.89,
+      "completeness": 1.0,
+      "lower_bound": 65.89,
+      "upper_bound": 65.89,
+      "band": "elevated",
+      "domain_scores": {
+        "clinical": 66.58,
+        "social": 71.67,
+        "accessibility": 66.2,
+        "environmental": 59.12
+      },
+      "missing_factors": [],
+      "top_contributing_factors": [
+        {
+          "factor": "past_referral_history",
+          "domain": "accessibility",
+          "score": 85,
+          "weight": 0.7,
+          "weighted_points": 5.95,
+          "bin": "past_non_completion"
+        },
+        {
+          "factor": "education_level",
+          "domain": "social",
+          "score": 80,
+          "weight": 0.6,
+          "weighted_points": 4.44,
+          "bin": "no_formal_education"
+        },
+        {
+          "factor": "blood_pressure",
+          "domain": "clinical",
+          "score": 75,
+          "weight": 1.0,
+          "weighted_points": 4.93,
+          "bin": "stage1_hypertension"
+        },
+        {
+          "factor": "birth_order_parity",
+          "domain": "social",
+          "score": 75,
+          "weight": 0.7,
+          "weighted_points": 4.86,
+          "bin": "grand_multipara"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": false,
+        "triggers_fired": [],
+        "priority": "Routine"
+      }
+    }
+  },
+  {
+    "id": "VEC-04-PRIORITY-CRITICAL",
+    "description": "Severe hypertension reading, distress migration, active road cut, severe anaemia",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 165,
+        "diastolic": 112
+      },
+      "bp_trend": "rising_trend",
+      "anaemia": {
+        "hb": 6.4,
+        "pallor": "severe"
+      },
+      "prior_c_section": true,
+      "gestational_age_anc1": "no_prior_anc",
+      "maternal_age": 38,
+      "birth_order_parity": 4,
+      "education_level": "no_formal_education",
+      "household_autonomy": "limited_autonomy",
+      "distance_to_cemoc": 150,
+      "transport_availability": "difficult_or_none",
+      "past_referral_history": "past_non_completion",
+      "road_disruption_risk": "active_road_cut",
+      "migration_status": "distress_displacement"
+    },
+    "danger_signs": [
+      "severe_hypertension_reading"
+    ],
+    "expected": {
+      "overall_score": 87.99,
+      "completeness": 1.0,
+      "lower_bound": 87.99,
+      "upper_bound": 87.99,
+      "band": "priority",
+      "domain_scores": {
+        "clinical": 89.74,
+        "social": 71.67,
+        "accessibility": 92.6,
+        "environmental": 97.94
+      },
+      "missing_factors": [],
+      "top_contributing_factors": [
+        {
+          "factor": "blood_pressure",
+          "domain": "clinical",
+          "score": 100,
+          "weight": 1.0,
+          "weighted_points": 6.58,
+          "bin": "severe_hypertension"
+        },
+        {
+          "factor": "anaemia",
+          "domain": "clinical",
+          "score": 100,
+          "weight": 0.9,
+          "weighted_points": 5.92,
+          "bin": "severe_anaemia"
+        },
+        {
+          "factor": "gestational_age_anc1",
+          "domain": "clinical",
+          "score": 100,
+          "weight": 0.6,
+          "weighted_points": 3.95,
+          "bin": "no_prior_anc"
+        },
+        {
+          "factor": "distance_to_cemoc",
+          "domain": "accessibility",
+          "score": 100,
+          "weight": 1.0,
+          "weighted_points": 10.0,
+          "bin": "over_120_min"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": true,
+        "triggers_fired": [
+          "severe_hypertension_reading"
+        ],
+        "priority": "Urgent"
+      }
+    }
+  },
+  {
+    "id": "VEC-05-INCOMPLETE-LOW-COMPLETENESS",
+    "description": "Only age and BP recorded, completeness < 60%, demonstrates wide lower/upper bound",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 124,
+        "diastolic": 82
+      },
+      "maternal_age": 22
+    },
+    "danger_signs": [],
+    "expected": {
+      "overall_score": 20.0,
+      "completeness": 0.168,
+      "lower_bound": 2.63,
+      "upper_bound": 88.65,
+      "band": "incomplete_provisional",
+      "domain_scores": {
+        "clinical": 40.0,
+        "social": 0.0,
+        "accessibility": null,
+        "environmental": null
+      },
+      "missing_factors": [
+        "bp_trend",
+        "anaemia",
+        "prior_c_section",
+        "gestational_age_anc1",
+        "birth_order_parity",
+        "education_level",
+        "household_autonomy",
+        "distance_to_cemoc",
+        "transport_availability",
+        "past_referral_history",
+        "road_disruption_risk",
+        "migration_status"
+      ],
+      "top_contributing_factors": [
+        {
+          "factor": "blood_pressure",
+          "domain": "clinical",
+          "score": 40,
+          "weight": 1.0,
+          "weighted_points": 2.63,
+          "bin": "elevated"
+        },
+        {
+          "factor": "maternal_age",
+          "domain": "social",
+          "score": 0,
+          "weight": 0.8,
+          "weighted_points": 0.0,
+          "bin": "age_optimal"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": false,
+        "triggers_fired": [],
+        "priority": "Routine"
+      }
+    }
+  },
+  {
+    "id": "VEC-06-URGENT-WITH-LOW-MVI",
+    "description": "Healthy young mother with Low MVI score but ACTIVE DANGER SIGN (vaginal bleeding) -> Must trigger Urgent Referral",
+    "inputs": {
+      "blood_pressure": {
+        "systolic": 112,
+        "diastolic": 72
+      },
+      "bp_trend": "stable_normal",
+      "anaemia": {
+        "hb": 12.0,
+        "pallor": "no"
+      },
+      "prior_c_section": false,
+      "gestational_age_anc1": 8,
+      "maternal_age": 23,
+      "birth_order_parity": 1,
+      "education_level": "higher_secondary_plus",
+      "household_autonomy": "independent",
+      "distance_to_cemoc": 10,
+      "transport_availability": "always_available",
+      "past_referral_history": "no_prior_referral",
+      "road_disruption_risk": "all_weather_road",
+      "migration_status": "settled_resident"
+    },
+    "danger_signs": [
+      "vaginal_bleeding"
+    ],
+    "expected": {
+      "overall_score": 0.0,
+      "completeness": 1.0,
+      "lower_bound": 0.0,
+      "upper_bound": 0.0,
+      "band": "lower",
+      "domain_scores": {
+        "clinical": 0.0,
+        "social": 0.0,
+        "accessibility": 0.0,
+        "environmental": 0.0
+      },
+      "missing_factors": [],
+      "top_contributing_factors": [
+        {
+          "factor": "blood_pressure",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 1.0,
+          "weighted_points": 0.0,
+          "bin": "normal"
+        },
+        {
+          "factor": "bp_trend",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 0.6,
+          "weighted_points": 0.0,
+          "bin": "stable_normal"
+        },
+        {
+          "factor": "anaemia",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 0.9,
+          "weighted_points": 0.0,
+          "bin": "no_anaemia"
+        },
+        {
+          "factor": "prior_c_section",
+          "domain": "clinical",
+          "score": 0,
+          "weight": 0.7,
+          "weighted_points": 0.0,
+          "bin": "no"
+        }
+      ],
+      "emergency_result": {
+        "has_emergency": true,
+        "triggers_fired": [
+          "vaginal_bleeding"
+        ],
+        "priority": "Urgent"
+      }
+    }
+  }
+]

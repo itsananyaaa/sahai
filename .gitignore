@@ -1,0 +1,59 @@
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Python / FastAPI
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+test-results/
+playwright-report/
+
+# Databases & Local state
+*.db
+*.sqlite
+*.sqlite3
+sahai.db
+
+# Environment variables
+.env
+.env.production
+!.env.example
+
+# IDEs & System
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

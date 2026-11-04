@@ -1,0 +1,18 @@
+import uuid
+from datetime import datetime
+from sqlalchemy import Column, String, Integer, DateTime
+from app.database import Base
+
+def generate_uuid() -> str:
+    return str(uuid.uuid4())
+
+class BaseModel(Base):
+    __abstract__ = True
+    
+    id = Column(String(36), primary_key=True, default=generate_uuid, index=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+    created_by = Column(String(36), nullable=True)
+    updated_by = Column(String(36), nullable=True)
+    deleted_at = Column(DateTime, nullable=True)
+    version = Column(Integer, default=1, nullable=False)

@@ -1,0 +1,11 @@
+{
+  "name": "@sahai/mvi-spec",
+  "version": "1.0.0",
+  "description": "Shared Maternal Vulnerability Index scoring specification and golden vectors",
+  "main": "scoring-config.v1.json",
+  "files": [
+    "scoring-config.v1.json",
+    "emergency-rules.v1.json",
+    "golden-vectors.v1.json"
+  ]
+}

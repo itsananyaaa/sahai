@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "status": "PROVISIONAL_ILLUSTRATIVE",
+  "name": "Maternal Vulnerability Index Specification",
+  "description": "Provisional rule-based multidimensional vulnerability index for frontline ASHA decision support in India. Pending formal clinical validation.",
+  "domain_weights": {
+    "clinical": 0.25,
+    "social": 0.25,
+    "accessibility": 0.25,
+    "environmental": 0.25
+  },
+  "min_domain_completeness": 0.5,
+  "min_overall_completeness": 0.6,
+  "bands": [
+    { "id": "lower", "min": 0, "max": 29.99, "label_key": "band_lower", "severity": "low" },
+    { "id": "moderate", "min": 30, "max": 54.99, "label_key": "band_moderate", "severity": "medium" },
+    { "id": "elevated", "min": 55, "max": 74.99, "label_key": "band_elevated", "severity": "high" },
+    { "id": "priority", "min": 75, "max": 100, "label_key": "band_priority", "severity": "critical" }
+  ],
+  "domains": {
+    "clinical": {
+      "name_key": "domain_clinical",
+      "factors": {
+        "blood_pressure": {
+          "weight": 1.0,
+          "factor_key": "factor_blood_pressure",
+          "source": "WHO Antenatal Care Guidelines & MoHFW PMSMA",
+          "bins": [
+            { "id": "normal", "score": 0, "max_systolic": 119, "max_diastolic": 79 },
+            { "id": "elevated", "score": 40, "min_systolic": 120, "max_systolic": 139, "min_diastolic": 80, "max_diastolic": 89 },
+            { "id": "stage1_hypertension", "score": 75, "min_systolic": 140, "max_systolic": 159, "min_diastolic": 90, "max_diastolic": 109 },
+            { "id": "severe_hypertension", "score": 100, "min_systolic": 160, "min_diastolic": 110 }
+          ]
+        },
+        "bp_trend": {
+          "weight": 0.6,
+          "factor_key": "factor_bp_trend",
+          "source": "Clinical literature on preeclampsia progression (pending clinical review)",
+          "bins": [
+            { "id": "stable_normal", "score": 0 },
+            { "id": "fluctuating", "score": 40 },
+            { "id": "rising_trend", "score": 70 }
+          ]
+        },
+        "anaemia": {
+          "weight": 0.9,
+          "factor_key": "factor_anaemia",
+          "source": "WHO Haemoglobin concentrations for diagnosis of anaemia",
+          "bins": [
+            { "id": "no_anaemia", "score": 0, "min_hb": 11.0, "pallor": "no" },
+            { "id": "mild_anaemia", "score": 35, "min_hb": 10.0, "max_hb": 10.9, "pallor": "mild" },
+            { "id": "moderate_anaemia", "score": 70, "min_hb": 7.0, "max_hb": 9.9, "pallor": "moderate" },
+            { "id": "severe_anaemia", "score": 100, "max_hb": 6.9, "pallor": "severe" }
+          ]
+        },
+        "prior_c_section": {
+          "weight": 0.7,
+          "factor_key": "factor_prior_c_section",
+          "source": "MoHFW Guidelines on Obstetric Management",
+          "bins": [
+            { "id": "no", "score": 0 },
+            { "id": "yes", "score": 70 }
+          ]
+        },
+        "gestational_age_anc1": {
+          "weight": 0.6,
+          "factor_key": "factor_gestational_age_anc1",
+          "source": "MoHFW First Trimester ANC Registration Standard",
+          "bins": [
+            { "id": "first_trimester", "score": 0, "max_weeks": 12 },
+            { "id": "second_trimester", "score": 40, "min_weeks": 13, "max_weeks": 27 },
+            { "id": "third_trimester", "score": 80, "min_weeks": 28, "max_weeks": 42 },
+            { "id": "no_prior_anc", "score": 100 }
+          ]
+        }
+      }
+    },
+    "social": {
+      "name_key": "domain_social",
+      "factors": {
+        "maternal_age": {
+          "weight": 0.8,
+          "factor_key": "factor_maternal_age",
+          "source": "NFHS-5 & WHO Adolescent and Advanced Maternal Age Risk",
+          "bins": [
+            { "id": "age_optimal", "score": 0, "min_age": 20, "max_age": 34 },
+            { "id": "age_young", "score": 30, "min_age": 18, "max_age": 19 },
+            { "id": "age_advanced", "score": 60, "min_age": 35, "max_age": 60 },
+            { "id": "age_adolescent", "score": 90, "min_age": 12, "max_age": 17 }
+          ]
+        },
+        "birth_order_parity": {
+          "weight": 0.7,
+          "factor_key": "factor_birth_order_parity",
+          "source": "Obstetric parity risk literature (pending clinical review)",
+          "bins": [
+            { "id": "second_or_third", "score": 0, "min_parity": 1, "max_parity": 2 },
+            { "id": "primigravida", "score": 25, "parity": 0 },
+            { "id": "grand_multipara", "score": 75, "min_parity": 3 }
+          ]
+        },
+        "education_level": {
+          "weight": 0.6,
+          "factor_key": "factor_education_level",
+          "source": "Social determinants of maternal health (NFHS-5)",
+          "bins": [
+            { "id": "higher_secondary_plus", "score": 0 },
+            { "id": "secondary", "score": 30 },
+            { "id": "primary", "score": 60 },
+            { "id": "no_formal_education", "score": 80 }
+          ]
+        },
+        "household_autonomy": {
+          "weight": 0.6,
+          "factor_key": "factor_household_autonomy",
+          "source": "NFHS-5 Female Decision-Making Autonomy indicators",
+          "bins": [
+            { "id": "independent", "score": 0 },
+            { "id": "shared_decision", "score": 20 },
+            { "id": "limited_autonomy", "score": 75 }
+          ]
+        }
+      }
+    },
+    "accessibility": {
+      "name_key": "domain_accessibility",
+      "factors": {
+        "distance_to_cemoc": {
+          "weight": 1.0,
+          "factor_key": "factor_distance_to_cemoc",
+          "source": "Three Delays Model (Delay 2: Reaching Care)",
+          "bins": [
+            { "id": "under_30_min", "score": 0, "max_minutes": 30 },
+            { "id": "30_to_59_min", "score": 35, "min_minutes": 31, "max_minutes": 59 },
+            { "id": "60_to_119_min", "score": 70, "min_minutes": 60, "max_minutes": 119 },
+            { "id": "over_120_min", "score": 100, "min_minutes": 120 }
+          ]
+        },
+        "transport_availability": {
+          "weight": 0.8,
+          "factor_key": "factor_transport_availability",
+          "source": "Emergency medical transport readiness (NHM)",
+          "bins": [
+            { "id": "always_available", "score": 0 },
+            { "id": "delayed_on_call", "score": 45 },
+            { "id": "difficult_or_none", "score": 90 }
+          ]
+        },
+        "past_referral_history": {
+          "weight": 0.7,
+          "factor_key": "factor_past_referral_history",
+          "source": "System referral compliance history",
+          "bins": [
+            { "id": "no_prior_referral", "score": 0 },
+            { "id": "completed_on_time", "score": 0 },
+            { "id": "past_non_completion", "score": 85 }
+          ]
+        }
+      }
+    },
+    "environmental": {
+      "name_key": "domain_environmental",
+      "factors": {
+        "road_disruption_risk": {
+          "weight": 1.0,
+          "factor_key": "factor_road_disruption_risk",
+          "source": "Disaster management & seasonal terrain disruption",
+          "bins": [
+            { "id": "all_weather_road", "score": 0 },
+            { "id": "seasonal_flood_risk", "score": 55 },
+            { "id": "active_road_cut", "score": 100 }
+          ]
+        },
+        "migration_status": {
+          "weight": 0.7,
+          "factor_key": "factor_migration_status",
+          "source": "Continuity of maternal care in seasonal migrant populations",
+          "bins": [
+            { "id": "settled_resident", "score": 0 },
+            { "id": "seasonal_migrant", "score": 65 },
+            { "id": "distress_displacement", "score": 95 }
+          ]
+        }
+      }
+    }
+  }
+}

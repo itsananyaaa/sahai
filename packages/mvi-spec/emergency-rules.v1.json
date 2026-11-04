@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "status": "PROVISIONAL_ILLUSTRATIVE",
+  "name": "SahAI Emergency Danger Signs & Escalation Rules",
+  "source": "WHO Managing Complications in Pregnancy and Childbirth (MCPC) & MoHFW Skilled Birth Attendant (SBA) Guidelines",
+  "danger_signs": [
+    {
+      "id": "vaginal_bleeding",
+      "label_key": "danger_vaginal_bleeding",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_bleeding_first_aid"
+    },
+    {
+      "id": "convulsions_fits",
+      "label_key": "danger_convulsions_fits",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_eclampsia_first_aid"
+    },
+    {
+      "id": "severe_headache_blurred_vision",
+      "label_key": "danger_severe_headache_blurred_vision",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_preeclampsia_warning"
+    },
+    {
+      "id": "severe_abdominal_pain",
+      "label_key": "danger_severe_abdominal_pain",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_abruption_labour_warning"
+    },
+    {
+      "id": "reduced_absent_fetal_movement",
+      "label_key": "danger_reduced_absent_fetal_movement",
+      "severity": "CRITICAL",
+      "action_key": "action_urgent_phc_evaluation",
+      "guidance_key": "guidance_fetal_distress_warning"
+    },
+    {
+      "id": "difficulty_breathing",
+      "label_key": "danger_difficulty_breathing",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_respiratory_warning"
+    },
+    {
+      "id": "high_fever",
+      "label_key": "danger_high_fever",
+      "severity": "CRITICAL",
+      "action_key": "action_urgent_phc_evaluation",
+      "guidance_key": "guidance_sepsis_warning"
+    },
+    {
+      "id": "leaking_fluid_premature_labour",
+      "label_key": "danger_leaking_fluid_premature_labour",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_prom_warning"
+    },
+    {
+      "id": "facial_swelling_with_headache",
+      "label_key": "danger_facial_swelling_with_headache",
+      "severity": "CRITICAL",
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_severe_preeclampsia_warning"
+    },
+    {
+      "id": "severe_hypertension_reading",
+      "label_key": "danger_severe_hypertension_reading",
+      "severity": "CRITICAL",
+      "threshold_systolic": 160,
+      "threshold_diastolic": 110,
+      "action_key": "action_immediate_facility_transfer",
+      "guidance_key": "guidance_hypertensive_crisis"
+    }
+  ]
+}
