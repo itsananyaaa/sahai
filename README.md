@@ -27,7 +27,7 @@
 > - **Lead Developer & Creator:** Ananya Biju
 > - **Current Phase:** Active Prototype & Technical Validation (Work in Progress / Still in Works)
 > - **Clinical Scope:** Point-of-care prioritization & triage support (Aligned with MoHFW PMSMA & WHO MCPC guidelines). *Uses synthetic datasets for demonstration. Not a replacement for professional clinical diagnosis.*
-
+> - Developmental changes ongoing
 ---
 
 ## 📌 Executive Summary & Ground Reality
